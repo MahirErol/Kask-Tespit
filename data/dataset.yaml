@@ -1,0 +1,8 @@
+train: C:/Users/Mahir/Desktop/kask-tespit/data/raw/train/images
+val: C:/Users/Mahir/Desktop/kask-tespit/data/raw/valid/images
+test: C:/Users/Mahir/Desktop/kask-tespit/data/raw/test/images
+
+nc: 2
+names: ["With Helmet", "Without Helmet"]
+
+

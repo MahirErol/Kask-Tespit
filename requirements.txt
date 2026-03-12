@@ -1,0 +1,7 @@
+ultralytics>=8.2.0,<9
+opencv-python
+matplotlib
+jupyter
+flask
+pandas
+
