@@ -2,7 +2,7 @@
 
 Bu proje motosiklet üzerindeki kişilerin kask takıp takmadığını YOLOv8 ile tespit etmek için hazırlandı.
 
-## 📋 İçindekiler
+## İçindekiler
 - [Kurulum](#kurulum)
 - [Hızlı Başlangıç](#hızlı-başlangıç)
 - [Eğitim](#eğitim)
@@ -11,7 +11,7 @@ Bu proje motosiklet üzerindeki kişilerin kask takıp takmadığını YOLOv8 il
 - [Model İyileştirme](#model-iyileştirme)
 - [Sonraki Adımlar](#sonraki-adımlar)
 
-## 🚀 Kurulum
+## Kurulum
 
 ```bash
 pip install -r requirements.txt
@@ -23,7 +23,7 @@ pip install torch==2.3.1+cu121 torchvision==0.18.1+cu121 --index-url https://dow
 pip install "numpy<2"  # NumPy uyumluluğu için
 ```
 
-## ⚡ Hızlı Başlangıç
+## Hızlı Başlangıç
 
 ### 1. Veri Yapısı
 - `data/raw/train|valid|test/images` ve `labels` (YOLO formatı)
@@ -50,7 +50,7 @@ python scripts/video_yolov8.py
 python scripts/webcam_yolov8.py
 ```
 
-## 🎓 Eğitim
+## Eğitim
 
 ### Temel Eğitim (YOLOv8n - Hızlı)
 ```bash
@@ -69,7 +69,7 @@ python scripts/train_better_model.py --model yolov8m.pt --epochs 100 --batch 2
 
 **Çıktılar:** `outputs/[run-name]/weights/best.pt`
 
-## 🔍 Tahmin ve Test
+## Tahmin ve Test
 
 ### Test Setinde Tahmin
 ```bash
@@ -83,7 +83,7 @@ python scripts/evaluate_yolov8.py
 ```
 Confusion matrix, PR curve ve detaylı metrikler üretir.
 
-## 📹 Gerçek Zamanlı Kullanım
+## Gerçek Zamanlı Kullanım
 
 ### Video Üzerinde
 ```bash
@@ -99,7 +99,7 @@ python scripts/webcam_yolov8.py
 
 **Not:** Confidence threshold `0.2` olarak ayarlanmış (daha fazla tespit için). Script içinden değiştirebilirsin.
 
-## 🚀 Model İyileştirme
+## Model İyileştirme
 
 ### Daha İyi Performans İçin
 1. **Daha büyük model eğit:**
@@ -116,48 +116,22 @@ python scripts/webcam_yolov8.py
 
 ## 📈 Sonraki Adımlar
 
-### ✅ Tamamlananlar
+### Tamamlananlar
 - [x] Dataset yapısı oluşturuldu
 - [x] YOLOv8n modeli eğitildi (mAP50: ~0.84)
 - [x] Test setinde tahmin yapıldı
 - [x] Video ve webcam scriptleri hazır
 - [x] Confidence threshold optimize edildi
 
-### 🔄 Yapılacaklar (Öneriler)
 
-1. **Model İyileştirme:**
-   - [ ] YOLOv8s/m modeli eğit (daha iyi performans)
-   - [ ] Data augmentation artır
-   - [ ] Hyperparameter tuning
-
-2. **Deployment:**
-   - [ ] Model export (ONNX, TensorRT)
-   - [ ] Web API (Flask/FastAPI)
-   - [ ] Mobil uygulama entegrasyonu
-
-3. **Gelişmiş Özellikler:**
-   - [ ] Çoklu kamera desteği
-   - [ ] Veritabanı entegrasyonu (tespit kayıtları)
-   - [ ] Alert sistemi (kasksız tespit edildiğinde)
-
-4. **Dokümantasyon:**
-   - [ ] API dokümantasyonu
-   - [ ] Deployment rehberi
-   - [ ] Kullanım örnekleri
-
-## 📝 Notlar
+##  Notlar
 
 - **Sınıflar:** `["With Helmet", "Without Helmet"]`, `nc: 2`
 - **Girdi boyutu:** Varsayılan 640 (GTX 1650 Ti için uygun)
 - **GPU:** CUDA 12.1 ile PyTorch kurulu olmalı
 - **NumPy:** `<2.0` versiyonu kullanılmalı (uyumluluk için)
 
-## 🐛 Sorun Giderme
 
-- **Video açılmıyor:** Video H.264 formatında olmalı, gerekirse ffmpeg ile convert et
-- **Kamera açılmıyor:** Başka uygulama kullanıyor olabilir, index'i değiştir (0→1)
-- **CUDA hatası:** PyTorch CUDA versiyonunu kontrol et
-- **NumPy hatası:** `pip install "numpy<2"` ile düzelt
 
 ## 📄 Lisans
 
